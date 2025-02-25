@@ -229,11 +229,68 @@ fun range(){
     var y = 5 downTo 1 // Диапазон с уменьшением значения
     println(y)
     for (i in y) println(i)
+
+    var z = 1..10 step 2 // Увеличивающийся диапазон с шагом 2
+    println(z)
+    for (i in z) println(i)
+
+    var w = 5 downTo 1 step 2 // Уменьшающийся диапазон с шагом 2
+    println(w)
+    for (i in w) println(i)
+
+    var v = 1 until 10 // Диапазон, исключающий верхнюю границу
+    println(v)
+    for (i in v) println(i)
+
+    val d = 1..100
+    println(10 in d)
+    println(200 in d)
+    println(101 !in d)
+    println(99 !in d)
+
+    var s = 'а'..'я'
+    println(s)
+    for (i in s) println(i)
+
+    var S = 'А'..'я'
+    println(S)
+    for (i in S) println(i)
+
+}
+
+// Массивы
+fun arrays(){
+    var numbers: Array<Int> = arrayOf(1, 2, 3, 4, 5) // Массив с явной типизацией (целочисленный)
+    var strings: Array<String> = arrayOf("Hello", "Kotlin", "Android") // Массив с явной типизацией (строковый)
+
+    var mixed = arrayOf(1, 2.4, 3.5f, "4") // Массив с неявной типизацией (смешанный)
+    for (i in mixed) println(i)
+    println("Четвертый элемент массива = ${mixed[3]}")
+    println("Длина массива Mixed = ${mixed.size}") // Возвращение длины массива
+
+    var numbers2 = arrayOf(1, 2, 3, 4, 5) // Массив с неявной типизацией (целочисленный)
+
+    var empty = arrayOfNulls<Int>(10) // Массив пустых значений определённой длинны
+    for (i in empty) println(i)
+    empty[0] = 100
+    for (i in empty) println(i)
+
+    var x = Array(4, {5})
+    for (i in x) println(i)
+
+    var y = 1
+    var z = Array(10, {y++ * 2})
+    for (i in z) println(i)
+    println(1 in z)
+    println(10 in z)
+    println(18 !in z)
+    println(21 !in z)
 }
 
 // Точка входа (запуска) программы
 fun main() {
-    range()
+    arrays()
+//    range()
 //    arrayNum()
 //    cycleDoWhile()
 //    loginPass()
