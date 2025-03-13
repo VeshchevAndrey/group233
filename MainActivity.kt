@@ -48,6 +48,40 @@ fun TestScroll(){
     )
 }
 
+@Composable
+fun TextButton(text: String){
+    Text(text = text, modifier = Modifier
+        .shadow(3.dp, RoundedCornerShape(5))
+        .background(Color.White, RoundedCornerShape(5))
+        .padding(5.dp)
+    )
+}
+
+@Composable
+fun MenuRow(){
+    Box(
+        modifier = Modifier
+            .background(Color.LightGray, RoundedCornerShape(10.dp))
+            .fillMaxWidth(1f)
+            .fillMaxHeight(0.2f)
+            .padding(0.dp, 15.dp)
+    ) { Row(horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier
+            .horizontalScroll(ScrollState(0))
+            .width(500.dp)
+    ) {
+        TextButton("Фото")
+        TextButton("Музыка")
+        TextButton("Видео")
+        TextButton("Альбомы")
+        TextButton("Моменты")
+        TextButton("Клипы")
+        TextButton("Статьи")
+        TextButton("NFT")
+    } }
+
+}
+
 // МОДИФИКАТОРЫ
 // .background(color, shape) - изменяет задний фон элемента
 // .height(X.dp) - изменение длины элемента
