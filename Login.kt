@@ -69,22 +69,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Group233Theme {
 
-            }
         }
     }
 }
 
 @Composable
-fun TestLogin(){
-    val login = remember { mutableStateOf("") }
+fun Registr(){
+    val password = remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .background(Color.LightGray)
             .fillMaxWidth(1f)
     ) {
-        Text(text = "Enter your login:",
+        Text(text = "Введите логин:",
             modifier = Modifier
                 .padding(0.dp) // Внешний отступ
                 .padding(5.dp), // Внутренний отступ
@@ -98,26 +96,128 @@ fun TestLogin(){
             textAlign = TextAlign.Right, // Выравнивание текста
             style = TextStyle(textIndent = TextIndent(5.sp)) // Красная строка
         )
-        OutlinedTextField(value = login.value,
+        OutlinedTextField(value = password.value,
             modifier = Modifier
                 .fillMaxWidth(1f)
                 .padding(10.dp, 5.dp),
-            onValueChange = { newText -> login.value = newText },
-            label = { Text("Login") },
-            placeholder = { Text("Login/E-mail/Phone", fontSize = 25.sp) },
+            onValueChange = { newText -> password.value = newText },
+            label = { Text("Логин") },
+            placeholder = { Text("Имя пользователя(логин)", fontSize = 25.sp) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            trailingIcon = { IconButton(onClick = { login.value = "" }) {
+            trailingIcon = { IconButton(onClick = { password.value = "" }) {
                 Icon(Icons.Filled.Delete, contentDescription = "Clear field")
-                } },
+            } },
             textStyle = TextStyle(fontSize = 25.sp),
             colors = OutlinedTextFieldDefaults.colors(
                 unfocusedBorderColor = Color.Black,
                 focusedBorderColor = Color(0xFF0D47A1),
                 focusedLabelColor = Color(0xFF0D47A1),
                 focusedContainerColor = Color(0xFFC5BBBB)
-            ),
-            prefix = { Text("+7", fontSize = 25.sp) }
+            )
         )
+
+        Text(text = "Введите почту:",
+            modifier = Modifier
+                .padding(0.dp) // Внешний отступ
+                .padding(5.dp), // Внутренний отступ
+            fontSize = 25.sp,
+            color = Color(0xFF0D47A1),
+            fontStyle = FontStyle.Normal, // Курсив (Italic)
+            fontWeight = FontWeight.Medium, // Толщина шрифта
+            fontFamily = FontFamily.SansSerif, // Вид шрифта
+            textDecoration = TextDecoration.None, // Подчёркивание шрифта
+            letterSpacing = 0.sp, // Расстояние между буквами
+            textAlign = TextAlign.Right, // Выравнивание текста
+            style = TextStyle(textIndent = TextIndent(5.sp)) // Красная строка
+        )
+        OutlinedTextField(value = password.value,
+            modifier = Modifier
+                .fillMaxWidth(1f)
+                .padding(10.dp, 5.dp),
+            onValueChange = { newText -> password.value = newText },
+            label = { Text("Почта") },
+            placeholder = { Text("Электронная почта", fontSize = 25.sp) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            trailingIcon = { IconButton(onClick = { password.value = "" }) {
+                Icon(Icons.Filled.Delete, contentDescription = "Clear field")
+            } },
+            textStyle = TextStyle(fontSize = 25.sp),
+            colors = OutlinedTextFieldDefaults.colors(
+                unfocusedBorderColor = Color.Black,
+                focusedBorderColor = Color(0xFF0D47A1),
+                focusedLabelColor = Color(0xFF0D47A1),
+                focusedContainerColor = Color(0xFFC5BBBB)
+            )
+        )
+
+        Text(text = "Введите пароль:",
+            modifier = Modifier
+                .padding(0.dp)
+                .padding(5.dp),
+            fontSize = 25.sp,
+            color = Color(0xFF0D47A1),
+            fontStyle = FontStyle.Normal,
+            fontWeight = FontWeight.Medium,
+            fontFamily = FontFamily.SansSerif,
+            textDecoration = TextDecoration.None,
+            letterSpacing = 0.sp,
+            textAlign = TextAlign.Right,
+            style = TextStyle(textIndent = TextIndent(5.sp))
+        )
+        OutlinedTextField(value = password.value,
+            modifier = Modifier
+                .fillMaxWidth(1f)
+                .padding(10.dp, 5.dp),
+            onValueChange = { newText -> password.value = newText },
+            label = { Text("Пароль") },
+            placeholder = { Text("Пароль", fontSize = 25.sp) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            trailingIcon = { IconButton(onClick = { password.value = "" }) {
+                Icon(Icons.Filled.Delete, contentDescription = "Clear field")
+            } },
+            textStyle = TextStyle(fontSize = 25.sp),
+            colors = OutlinedTextFieldDefaults.colors(
+                unfocusedBorderColor = Color.Black,
+                focusedBorderColor = Color(0xFF0D47A1),
+                focusedLabelColor = Color(0xFF0D47A1),
+                focusedContainerColor = Color(0xFFC5BBBB)
+            )
+        )
+
+        Text(text = "Подтвердите пароль:",
+            modifier = Modifier
+                .padding(0.dp)
+                .padding(5.dp),
+            fontSize = 25.sp,
+            color = Color(0xFF0D47A1),
+            fontStyle = FontStyle.Normal,
+            fontWeight = FontWeight.Medium,
+            fontFamily = FontFamily.SansSerif,
+            textDecoration = TextDecoration.None,
+            letterSpacing = 0.sp,
+            textAlign = TextAlign.Right,
+            style = TextStyle(textIndent = TextIndent(5.sp))
+        )
+        OutlinedTextField(value = password.value,
+            modifier = Modifier
+                .fillMaxWidth(1f)
+                .padding(10.dp, 5.dp),
+            onValueChange = { newText -> password.value = newText },
+            label = { Text("Пароль") },
+            placeholder = { Text("Подтвердите пароль", fontSize = 25.sp) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            trailingIcon = { IconButton(onClick = { password.value = "" }) {
+                Icon(Icons.Filled.Delete, contentDescription = "Clear field")
+            } },
+            textStyle = TextStyle(fontSize = 25.sp),
+            colors = OutlinedTextFieldDefaults.colors(
+                unfocusedBorderColor = Color.Black,
+                focusedBorderColor = Color(0xFF0D47A1),
+                focusedLabelColor = Color(0xFF0D47A1),
+                focusedContainerColor = Color(0xFFC5BBBB)
+            )
+        )
+
         Button(onClick = { },
             modifier = Modifier.padding(10.dp, 5.dp),
             enabled = true,
@@ -127,12 +227,12 @@ fun TestLogin(){
             ),
             border = BorderStroke(1.dp, Color.Black),
             contentPadding = ButtonDefaults.TextButtonContentPadding
-            ) { Text("Login", fontSize = 25.sp) }
+        ) { Text("Регистрация", fontSize = 25.sp) }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun TestUIPreview(){
-    TestLogin()
+    Registr()
 }
